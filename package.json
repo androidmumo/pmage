@@ -1,7 +1,7 @@
 {
   "name": "pmage",
   "version": "1.0.0",
-  "description": "",
+  "description": "适用于vue3的渐进式图片加载插件",
   "main": "lib/pmage.js",
   "module": "es/index.js",
   "style": "lib/index.css",
@@ -10,6 +10,11 @@
     "lib",
     "es"
   ],
+  "keywords": [
+    "vue3",
+    "progressive-image"
+  ],
+  "repository": "https://github.com/androidmumo/pmage",
   "scripts": {
     "dev": "vant-cli dev",
     "lint": "vant-cli lint",
@@ -21,7 +26,11 @@
     "test:watch": "vant-cli test --watch",
     "test:coverage": "open test/coverage/index.html"
   },
-  "author": "",
+  "author": {
+    "name": "androidmumo",
+    "email": "androidmumo@outlook.com",
+    "url": "https://www.mcloc.cn/"
+  },
   "nano-staged": {
     "*.md": "prettier --write",
     "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
