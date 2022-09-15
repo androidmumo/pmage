@@ -1,6 +1,6 @@
 {
   "name": "pmage",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "适用于vue3的渐进式图片加载插件",
   "main": "lib/pmage.js",
   "module": "es/index.js",
