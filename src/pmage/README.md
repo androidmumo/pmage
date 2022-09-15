@@ -1,16 +1,16 @@
-# DemoButton 按钮
+# Pmage
 
 ### 介绍
 
-DemoButton 是一个示例按钮组件
+Pmage 是一个图片渐进加载组件
 
 ### 引入
 
 ```js
 import Vue from 'vue';
-import { DemoButton } from 'pmage';
+import { Pmage } from 'pmage';
 
-Vue.use(DemoButton);
+Vue.use(Pmage);
 ```
 
 ## 代码演示

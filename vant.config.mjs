@@ -29,8 +29,8 @@ export default {
         title: '基础组件',
         items: [
           {
-            path: 'demo-button',
-            title: 'DemoButton 按钮',
+            path: 'pmage',
+            title: '图片渐进加载',
           },
         ],
       },
