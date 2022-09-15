@@ -67,7 +67,7 @@ const loadImage = () => {
 		_pmage.value.insertBefore(img, _pmageSlotTop.value);
 		_pmage.value.insertBefore(div, _pmageSlotTop.value);
 		state.loaded = true
-		emit('onload', '')
+		emit('onload')
 	};
 	img.src = props.src;
 }
