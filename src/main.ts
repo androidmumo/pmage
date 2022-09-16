@@ -6,10 +6,6 @@ import pmage from './packages/pmage'
 
 const app = createApp(App)
 
-app.use(pmage, {
-	blur: 10,
-	scale: 1.2,
-	time: 0.5
-});
+app.use(pmage);
 
 app.mount('#app')

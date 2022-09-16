@@ -22,9 +22,7 @@ const reduceStyle = (args: Args) => {
 const pmage = {
 	install(App: any, options?: Args) {
 		let css = ''
-		if (options) {
-			css = reduceStyle(options)
-		}
+		css = reduceStyle(options || {});
 		css = `<style type="text/css">._pmage{${css}}</style>`;
 		document.head.insertAdjacentHTML("beforeend", css);
 		App.component('Pmage', Pmage);
