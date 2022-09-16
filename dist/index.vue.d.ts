@@ -55,6 +55,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
         loaded: boolean;
         style: string;
     };
+    reduceStyle: () => void;
     _pmage: import("vue").Ref<any>;
     _pmageSlotDefault: import("vue").Ref<any>;
     _pmageSlotTop: import("vue").Ref<any>;

@@ -25,7 +25,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "build:no-tsc": "vite build",
-    "release": "release-it",
+    "release": "pnpm run build && release-it",
     "preview": "vite preview"
   },
   "dependencies": {
