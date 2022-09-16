@@ -5,7 +5,6 @@
       :animation="true"
       :blur="10"
       :scale="1.2"
-      :time="0.5"
       :delay="2000"
       @before-load="beforeLoad"
       @onload="onload">

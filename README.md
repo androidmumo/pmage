@@ -13,8 +13,33 @@ npm install pmage --save
 
 ### 引入
 
+##### 全局引入
+
 ```javascript
-import { pmage } from 'pmage'
+import { createApp } from 'vue'
+import App from './App.vue'
+
+import pmage from 'pmage' // 引入pmage
+import 'pmage/dist/style.css' // 引入样式文件
+
+const app = createApp(App)
+
+app.use(pmage, {
+	blur: 10, // 模糊像素(px)，默认为10
+	scale: 1.2, // 缩放倍数，默认为1.2
+	time: 0.5 // 动画持续时间(s)，默认为0.5
+});
+
+app.mount('#app')
+```
+
+请注意，全局配置的 `blur`、`scale`、`time`，会被组件上的Props覆盖。
+
+##### 按需引入
+
+```javascript
+import { pmage } from 'pmage' // 引入pmage
+import 'pmage/dist/style.css' // 引入样式文件
 ```
 
 ### 使用

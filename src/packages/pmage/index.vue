@@ -1,6 +1,5 @@
 <template>
-	<div
-		ref="_pmage" :style="state.style"
+	<div ref="_pmage" :style="state.style"
 		:class="{ '_pmage': true, '_pmage-loaded': state.loaded, '_pmage-animation': props.animation }">
 		<div ref="_pmageSlotDefault" class="_pmage-slot-default">
 			<slot name="default" />
@@ -31,16 +30,27 @@ const props = withDefaults(defineProps<Props>(), {
 	src: '',
 	animation: true,
 	onBeforeLoad: null,
-	blur: 10,
-	scale: 1.2,
-	time: 0.5,
+	blur: NaN,
+	scale: NaN,
+	time: NaN,
 	delay: 0,
 })
 
 const state = reactive({
 	loaded: false, // 图片加载完成
-	style: `--blur: ${props.blur}px; --scale: ${props.scale}; --time: ${props.time}s;`
+	style: '',
 })
+
+// 拼装style
+const reduceStyle = () => {
+	let style = ''
+	if (!!props.blur) style = `--blur: ${props.blur}px;`
+	if (!!props.scale) style += ` --scale: ${props.scale};`
+	if (!!props.time) style += ` --time: ${props.time}s;`
+	state.style = style
+}
+reduceStyle()
+
 
 const _pmage = ref()
 const _pmageSlotDefault = ref()
