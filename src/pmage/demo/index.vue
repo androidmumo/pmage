@@ -1,8 +1,6 @@
 <template>
   <demo-block title="基础用法">
     <pmage
-      :style="{width: '100%'}"
-      :placeholder="'https://ftp.bmp.ovh/imgs/2021/04/c7a9451f12cb70ce.jpg'"
       :src="'https://ftp.bmp.ovh/imgs/2021/04/b3a70da0fa596920.jpeg'"
       :animation="true"
       :blur="10"

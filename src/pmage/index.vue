@@ -17,7 +17,7 @@ import { onMounted, ref, reactive } from "vue"
 const emit = defineEmits(['beforeLoad', 'onload'])
 
 interface Props {
-	placeholder: string, // 占位图
+	placeholder?: string, // 占位图
 	src: string, // 原图
 	animation?: boolean, // 是否启用动画
 	onBeforeLoad?: any, // load前钩子
@@ -55,7 +55,7 @@ const loadPlaceholderImage = () => {
 		_pmage.value.insertBefore(img, _pmageSlotDefault.value);
 		_pmage.value.insertBefore(div, _pmageSlotDefault.value);
 	};
-	img.src = props.placeholder;
+	img.src = props.placeholder || props.src;
 }
 
 const loadImage = () => {

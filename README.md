@@ -21,14 +21,8 @@ import { pmage } from 'pmage'
 
 ##### 最简引用
 
-任何情况下，您都需要给 `<pmage />` 组件指定一个宽度。
-
 ```vue
-<pmage
-  :style="{width: '100%'}"
-  :placeholder="'https://ftp.bmp.ovh/imgs/2021/04/c7a9451f12cb70ce.jpg'"
-  :src="'https://ftp.bmp.ovh/imgs/2021/04/b3a70da0fa596920.jpeg'">
-</pmage>
+<pmage :src="'https://ftp.bmp.ovh/imgs/2021/04/b3a70da0fa596920.jpeg'" />
 ```
 
 ##### 全部能力
@@ -36,7 +30,6 @@ import { pmage } from 'pmage'
 ```vue
 <template>
 	<pmage
-		:style="{width: '100%'}"
 		:placeholder="'https://ftp.bmp.ovh/imgs/2021/04/c7a9451f12cb70ce.jpg'"
 		:src="'https://ftp.bmp.ovh/imgs/2021/04/b3a70da0fa596920.jpeg'"
 		:animation="true"
@@ -72,15 +65,17 @@ const onload = () => {
 
 ### Props
 
-| 属性        | 类型    | 说明                       |
-| ----------- | ------- | -------------------------- |
-| placeholder | string  | 占位图的src                |
-| src         | string  | 原图的src                  |
-| animation   | boolean | 是否启用动画，默认为true   |
-| blur        | number  | 模糊像素(px)，默认为10     |
-| scale       | number  | 缩放倍数，默认为1.2        |
-| time        | number  | 动画持续时间(s)，默认为0.5 |
-| delay       | number  | 延时(ms)，默认为0          |
+| 属性        | 类型    | 是否必须 | 说明                       |
+| ----------- | ------- | -------- | -------------------------- |
+| src         | string  | 必须     | 原图的src                  |
+| placeholder | string  | 可选     | 占位图的src                |
+| animation   | boolean | 可选     | 是否启用动画，默认为true   |
+| blur        | number  | 可选     | 模糊像素(px)，默认为10     |
+| scale       | number  | 可选     | 缩放倍数，默认为1.2        |
+| time        | number  | 可选     | 动画持续时间(s)，默认为0.5 |
+| delay       | number  | 可选     | 延时(ms)，默认为0          |
+
+`placeholder` 占位图建议使用原图等比缩放后的base64格式图片，来使体验最佳化。
 
 ### Event
 
