@@ -7,6 +7,7 @@ export default {
     site: {
       publicPath: '/pmage/',
     },
+    packageManager: 'yarn',
   },
   site: {
     title: 'pmage',
