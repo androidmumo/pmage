@@ -1,5 +1,5 @@
 <template>
-  <demo-block title="基础用法">
+  <div>
     <pmage
       :src="'https://ftp.bmp.ovh/imgs/2021/04/b3a70da0fa596920.jpeg'"
       :animation="true"
@@ -16,12 +16,11 @@
         <div class="top">上层插槽</div>
       </template>
     </pmage>
-  </demo-block>
+  </div>
 </template>
-<script setup>
-import pmage from '../index.vue';
 
-const beforeLoad = (next) => {
+<script setup lang="ts">
+const beforeLoad = (next: Function) => {
   console.log('beforeLoad')
   next();
 }

@@ -2,65 +2,44 @@
   "name": "pmage",
   "version": "0.2.4",
   "description": "适用于vue3的渐进式图片加载插件",
-  "main": "lib/pmage.js",
-  "module": "es/index.js",
-  "style": "lib/index.css",
-  "typings": "lib/index.d.ts",
+  "private": false,
+  "type": "module",
+  "module": "dist/pmage.ts",
+  "main": "dist/pmage.umd.ts",
+  "typings": "dist/pmage.d.ts",
+  "style": "dist/style.css",
   "files": [
-    "lib",
-    "es"
+    "dist"
   ],
   "keywords": [
     "vue3",
     "progressive-image"
   ],
   "repository": "https://github.com/androidmumo/pmage",
-  "scripts": {
-    "dev": "vant-cli dev",
-    "lint": "vant-cli lint",
-    "test": "vant-cli test",
-    "build": "vant-cli build",
-    "build:site": "vant-cli build-site",
-    "release": "vant-cli release",
-    "release-next": "vant-cli release --tag next",
-    "release:site": "pnpm build:site && npx gh-pages -d site-dist",
-    "test:watch": "vant-cli test --watch",
-    "test:coverage": "open test/coverage/index.html"
-  },
   "author": {
     "name": "androidmumo",
     "email": "androidmumo@outlook.com",
     "url": "https://www.mcloc.cn/"
   },
-  "nano-staged": {
-    "*.md": "prettier --write",
-    "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
-    "*.{ts,tsx,js,vue}": "eslint --fix",
-    "*.{vue,css,less,scss}": "stylelint --fix"
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "build:no-tsc": "vite build",
+    "release": "release-it",
+    "preview": "vite preview"
   },
-  "peerDependencies": {
-    "vue": "^3.0.0"
+  "dependencies": {
+    "vue": "^3.2.37"
   },
   "devDependencies": {
-    "@algolia/client-search": "^4.9.1",
-    "@types/markdown-it": "*",
-    "@vant/cli": "^4.0.4",
+    "@types/node": "^18.7.18",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "release-it": "^15.4.2",
     "sass": "^1.54.9",
-    "vue": "^3.2.39"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@vant"
-    ]
-  },
-  "stylelint": {
-    "extends": [
-      "@vant/stylelint-config"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0",
+    "vite-plugin-dts": "^1.5.0",
+    "vue-tsc": "^0.40.4"
   },
   "browserslist": [
     "Chrome >= 51",
