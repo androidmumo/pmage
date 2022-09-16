@@ -72,7 +72,7 @@ const $ = (s) => {
 }, x = {
   install(s, l) {
     let e = "";
-    l && (e = $(l)), e = `<style type="text/css">._pmage{${e}}</style>`, document.head.insertAdjacentHTML("beforeend", e), s.component("Pmage", S);
+    e = $(l || {}), e = `<style type="text/css">._pmage{${e}}</style>`, document.head.insertAdjacentHTML("beforeend", e), s.component("Pmage", S);
   }
 };
 export {
