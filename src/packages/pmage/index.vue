@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, reactive, getCurrentInstance } from "vue"
+import { ref, reactive, getCurrentInstance, onActivated, onMounted } from "vue"
 
 const { appContext } = getCurrentInstance() || {};
 const emit = defineEmits(['beforeLoad', 'onload'])
@@ -93,8 +93,18 @@ const loadImage = () => {
 	img.src = props.src;
 }
 
+onActivated(() => {
+	if (state.loaded) {
+		state.animation = false;
+		return;
+	};
+})
+
 onMounted(() => {
-	if (state.loaded) return;
+	if (state.loaded) {
+		state.animation = false;
+		return;
+	};
 	loadPlaceholderImage();
 	setTimeout(() => {
 		if (!props.onBeforeLoad) return loadImage();
