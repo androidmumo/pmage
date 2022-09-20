@@ -31,8 +31,8 @@ const pmage = {
 
 		const { animation, delay } = options || {};
 		app.config.globalProperties.pmage_config = {
-			animation,
-			delay
+			animation: animation || true,
+			delay: delay || 0,
 		}
 	},
 };
