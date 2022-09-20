@@ -27,13 +27,15 @@ const app = createApp(App)
 app.use(pmage, {
 	blur: 10, // 模糊像素(px)，默认为10
 	scale: 1.2, // 缩放倍数，默认为1.2
-	time: 0.5 // 动画持续时间(s)，默认为0.5
+	time: 0.5, // 动画持续时间(s)，默认为0.5
+  animation: true, // 是否启用动画，默认为true
+	delay: 1000 // 延时(ms)，默认为0
 });
 
 app.mount('#app')
 ```
 
-请注意，全局配置的 `blur`、`scale`、`time`，会被组件上的Props覆盖。
+请注意，全局配置的属性，会被组件上的Props覆盖。
 
 ##### 按需引入
 

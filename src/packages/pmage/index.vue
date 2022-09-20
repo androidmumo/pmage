@@ -1,6 +1,6 @@
 <template>
 	<div ref="_pmage" :style="state.style"
-		:class="{ '_pmage': true, '_pmage-loaded': state.loaded, '_pmage-animation': props.animation }">
+		:class="{ '_pmage': true, '_pmage-loaded': state.loaded, '_pmage-animation': state.animation }">
 		<div ref="_pmageSlotDefault" class="_pmage-slot-default">
 			<slot name="default" />
 		</div>
@@ -11,8 +11,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, reactive } from "vue"
+import { onMounted, ref, reactive, getCurrentInstance } from "vue"
 
+const { appContext } = getCurrentInstance() || {};
 const emit = defineEmits(['beforeLoad', 'onload'])
 
 interface Props {
@@ -28,17 +29,19 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
 	placeholder: '',
 	src: '',
-	animation: true,
+	animation: false,
 	onBeforeLoad: null,
 	blur: NaN,
 	scale: NaN,
 	time: NaN,
-	delay: 0,
+	delay: NaN,
 })
 
 const state = reactive({
 	loaded: false, // 图片加载完成
 	style: '',
+	animation: true,
+	delay: 0,
 })
 
 // 拼装style
@@ -50,6 +53,14 @@ const reduceStyle = () => {
 	state.style = style
 }
 reduceStyle()
+
+// 初始化参数
+const initOption = () => {
+	const { animation, delay } = appContext?.config.globalProperties.pmage_config;
+	state.animation = !!props.animation ? props.animation : animation;
+	state.delay = !!props.delay ? props.delay : delay;
+}
+initOption()
 
 
 const _pmage = ref()
@@ -87,7 +98,7 @@ onMounted(() => {
 	setTimeout(() => {
 		if (!props.onBeforeLoad) return loadImage();
 		emit('beforeLoad', () => loadImage());
-	}, props.delay);
+	}, state.delay);
 })
 
 // todo watch src的时候加载
