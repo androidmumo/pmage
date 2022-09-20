@@ -94,6 +94,7 @@ const loadImage = () => {
 }
 
 onMounted(() => {
+	if (state.loaded) return;
 	loadPlaceholderImage();
 	setTimeout(() => {
 		if (!props.onBeforeLoad) return loadImage();
