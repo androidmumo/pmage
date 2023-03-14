@@ -77,7 +77,7 @@ import 'pmage/dist/style.css' // 引入样式文件
 </template>
 	
 <script setup>
-import pmage from '../index.vue';
+import pmage from 'pmage';
 
 const beforeLoad = (next) => {
 	console.log('beforeLoad')
