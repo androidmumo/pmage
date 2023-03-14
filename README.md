@@ -1,6 +1,12 @@
 # pmage
 这是一个适用于VUE3的渐进式图片加载插件！
 
+
+
+<img src="/Users/majunjie/my/personal/pmage/preview.gif" alt="preview" style="zoom: 50%;" />
+
+
+
 **pmage** 即 **Progressive Image** ，它可以帮您：实现从高斯模糊的缩略图到原图的平缓过渡，改善用户体验。
 
 原理：缩略图会被优先下载，使用户先看到一张高斯模糊的缩略图；当原图加载完成时，再平滑过渡到高清图片，这便是渐进加载。
