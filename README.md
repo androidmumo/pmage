@@ -3,7 +3,7 @@
 
 
 
-<img src="./preview.gif" alt="preview" style="zoom: 50%;" />
+<img src="./preview.gif" alt="preview" width="66%" />
 
 
 
