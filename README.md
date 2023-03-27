@@ -55,7 +55,7 @@ import 'pmage/dist/style.css' // 引入样式文件
 ##### 最简引用
 
 ```vue
-<pmage :src="'https://ftp.bmp.ovh/imgs/2021/04/b3a70da0fa596920.jpeg'" />
+<pmage src="https://ftp.bmp.ovh/imgs/2021/04/b3a70da0fa596920.jpeg" />
 ```
 
 ##### 全部能力
