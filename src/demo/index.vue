@@ -8,7 +8,8 @@
       :time="0.5"
       :delay="2000"
       @before-load="beforeLoad"
-      @onload="onload">
+      @onload="onload"
+      @onerror="onerror">
       <template #default>
         <div class="default">默认插槽</div>
       </template>
@@ -27,6 +28,10 @@ const beforeLoad = (next: Function) => {
 
 const onload = () => {
   console.log('onload')
+}
+
+const onerror = () => {
+  console.log('onerror')
 }
 </script>
 

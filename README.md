@@ -72,6 +72,7 @@ import 'pmage/dist/style.css' // 引入样式文件
 		:delay="2000"
 		@before-load="beforeLoad"
 		@onload="onload"
+		@onerror="onerror"
 	>
 		<template #default>
 			<div class="default">默认插槽</div>
@@ -92,6 +93,10 @@ const beforeLoad = (next) => {
 
 const onload = () => {
 	console.log('onload')
+}
+
+const onerror = () => {
+  console.log('onerror')
 }
 </script>
 ```
@@ -116,6 +121,7 @@ const onload = () => {
 | ------------ | ------ | ------------------------------------------------------------ |
 | @before-load | next() | 加载前钩子，原图开始加载前触发，参数为next函数，调用next后开始加载原图 |
 | @onload      | 无     | 图片加载完成后触发                                           |
+| @onerror     | 无     | 图片加载失败时触发                                           |
 
 ### Slot
 
