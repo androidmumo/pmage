@@ -14,7 +14,7 @@
 import { ref, reactive, getCurrentInstance, onActivated, onMounted } from "vue"
 
 const { appContext } = getCurrentInstance() || {};
-const emit = defineEmits(['beforeLoad', 'onload'])
+const emit = defineEmits(['beforeLoad', 'onload', 'onerror'])
 
 interface Props {
 	placeholder?: string, // 占位图
@@ -90,6 +90,9 @@ const loadImage = () => {
 		state.loaded = true
 		emit('onload')
 	};
+	img.onerror = () => {
+		emit('onerror')
+	}
 	img.src = props.src;
 }
 
